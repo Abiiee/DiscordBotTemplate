@@ -1,0 +1,16 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "Plantilla simple para un bot de discord usando discord.js-light",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "AviiiCD",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js-light": "github:timotejroiko/discord.js-light",
+    "dotenv": "^10.0.0"
+  }
+}
