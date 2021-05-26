@@ -8,7 +8,7 @@ module.exports = class Message extends Events {
     }
 
     async run(message) {
-        let prefix = '!';
+        let prefix = process.env.BOT_PREFIX || '!';
         if (!message.author) return;
 
         const prefixes = [prefix, `<@${this.client.user.id}>`, `<@!${this.client.user.id}>`];
@@ -26,7 +26,6 @@ module.exports = class Message extends Events {
         try {
             if (!cmd.canRun(message)) return;
             cmd.run(message, args);
-            console.log(cmd)
         } catch (e) {
             console.log(e.stack || e);
             message.channel.send(`Un error a ocurrido: ${e.message || e}`);

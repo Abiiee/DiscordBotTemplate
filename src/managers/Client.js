@@ -1,11 +1,11 @@
-const { Client } = require('discord.js-light')
+const { Client, Intents } = require('discord.js-light')
 const Commands = require('./Commands')
 const Events = require('./Events')
 module.exports = class Bot extends Client {
     constructor() {
         super({
-            intents: 1, // Intents necesarios por ustedes por defecto 1.
-
+            /* Intents necesarios por ustedes por defecto por defecto servidores y mensajes de servidores. */
+            intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
             /* Las siguientes lineas deben activarlas o desactivarlas depende de lo que necesiten */
             cacheRoles: true,
             cacheGuilds: true,
