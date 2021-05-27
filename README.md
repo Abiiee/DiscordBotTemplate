@@ -8,7 +8,7 @@ El uso es sencillo, puedes modificarlo a tu gusto, pero esta hecho con una base 
 ## Archivo .env
 Para empezar, debes crear tu archivo .env y deberas poner el token de tu bot y los desarroladores del bot(opcional)
 ```
-BOT_PREFIX=El prefijo del tu bot.
+BOT_PREFIX=El prefijo de tu bot.
 BOT_TOKEN=El token de tu bot de discord.
 DEVS=IDs de los desarrolladores separada por ", ".
 ```
