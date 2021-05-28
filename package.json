@@ -12,5 +12,9 @@
   "dependencies": {
     "discord.js-light": "github:timotejroiko/discord.js-light",
     "dotenv": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": "*"
   }
 }
