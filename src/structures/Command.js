@@ -33,13 +33,13 @@ module.exports = class Command {
         if (!this.enabled && !this.client.devs.includes(message.author.id)) return !message.channel.send('Este comando se encuentra en mantenimiento');
         if (this.guildOnly && !message.guild) return !message.channel.send('Este comando solo puede ejecutarse en servidores.');
         if (message.guild && !message.channel.nsfw && this.nsfwOnly) return !message.channel.send('Este comando solo puede ejecutarse en canales NSFW.');
-        if (message.guild && this.memberPerms.guild[0] && !this.memberPerms.guild.some((x) => message.member.permissions.has(x)) && !this.client.devs.includes(message.author.id))
+        if (message.guild && this.memberPerms.guild[0] && !this.memberPerms.guild.every((x) => message.member.permissions.has(x)) && !this.client.devs.includes(message.author.id))
             return !message.channel.send(`Necesitas de los siguientes permisos \`${this.memberPerms.guild.map(this.parsePermission).join(', ')}\``);
-        if (message.guild && this.memberPerms.channel[0] && !this.memberPerms.channel.some((x) => message.channel.permissionsFor(message.member).has(x)) && !this.client.devs.includes(message.author.id))
+        if (message.guild && this.memberPerms.channel[0] && !this.memberPerms.channel.every((x) => message.channel.permissionsFor(message.member).has(x)) && !this.client.devs.includes(message.author.id))
             return !message.channel.send(`Necesitas de los siguientes permisos en este canal: \`${this.this.memberPerms.channel.map(this.parsePermission).join(', ')}\``);
-        if (message.guild && this.botPerms.guild[0] && !this.botPerms.guild.some((x) => message.guild.me.permissions.has(x)))
+        if (message.guild && this.botPerms.guild[0] && !this.botPerms.guild.every((x) => message.guild.me.permissions.has(x)))
             return !message.channel.send(`Necesito de los siguientes permisos: \`${this.botPerms.guild.map(this.parsePermission).join(', ')}\``);
-        if (message.guild && this.botPerms.channel[0] && !this.botPerms.channel.some((x) => message.channel.permissionsFor(message.guild.me).has(x)))
+        if (message.guild && this.botPerms.channel[0] && !this.botPerms.channel.every((x) => message.channel.permissionsFor(message.guild.me).has(x)))
             return !message.channel.send(`Necesito de los siguientes permisos en este canal: \`${this.botPerms.channel.map(this.parsePermission).join(', ')}\``);
         return true;
     }
