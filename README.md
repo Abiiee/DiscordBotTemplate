@@ -29,5 +29,3 @@ Se puede borrar el archivo `index.js` y renombrar el `bot.js` por este, en caso 
 Si tienen alguna duda acerca de la base del bot no duden en contactarme.
 
 **Tag:** Abbie.#6500 `(710880777662890095)`
-
-Y también soy moderador de un servidor que se dedica a este tipo de ayuda, por lo que si te interesa también pueden contactarme por ahí. **[Invitación](https://discord.gg/g6ssSmK)**
